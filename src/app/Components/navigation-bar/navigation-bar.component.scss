@@ -86,7 +86,16 @@ background-color: indigo;
     background-color: white;
 }
 
-mat-sidenav-content {
-    height: 50%;
+mat-sidenav-container {
+    min-height: 74.5% !important;
+    height: 80px !important;
+
     background: linear-gradient(90deg, #000000 0%, rgb(0, 42, 61) 50%, #000000 100%)
+}
+
+@media (max-width: 800px) {
+    mat-sidenav-container {
+        min-height: 80.5% !important;
+        height: 80px !important;
+    }
 }
