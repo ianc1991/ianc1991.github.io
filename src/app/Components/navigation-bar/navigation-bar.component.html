@@ -5,9 +5,9 @@
     </button>
   </div>
   <mat-toolbar class="navbar" fxShow="true" fxHide.lt-md="true">
-      <button class="glow-on-hover" type="button" routerLink='/aboutme'>ABOUT ME</button>
-      <button class="glow-on-hover" type="button">PORTFOLIO</button>
-      <button class="glow-on-hover" type="button">CONTACT ME</button>
+      <button class="glow-on-hover" [ngClass]="{'activeButton': isActiveAboutMe}" type="button" routerLink='/aboutme'>ABOUT ME</button>
+      <button class="glow-on-hover" [ngClass]="{'activeButton': isActivePortfolio}" type="button">PORTFOLIO</button>
+      <button class="glow-on-hover" [ngClass]="{'activeButton': isActiveContactMe}" type="button">CONTACT ME</button>
   </mat-toolbar>
 </div>
 

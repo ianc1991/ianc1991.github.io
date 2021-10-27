@@ -3,13 +3,18 @@ div.container {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white;
+    color: rgb(244, 255, 182);
     background-image: url("../../../assets/Space2.png");
+    background-size:cover;
+    background-repeat: no-repeat;
     height: 100%;
 }
 
 div.textBox1 {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(27, 0, 70, 0.568);
     width: 80%;
+    font-size: 20px;
+    padding: 0%;
+    margin: 0%;
 }
