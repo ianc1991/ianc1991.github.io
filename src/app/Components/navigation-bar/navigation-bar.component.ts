@@ -14,13 +14,9 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
   constructor(private router: Router) { }
 
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
-  ngOnInit(): void {
-    if (this.router.url === '/aboutme' || this.router.url === '/') {
-      this.isActiveAboutMe = true;
-      
-    }
+  ngOnInit(): void { 
   }
 }

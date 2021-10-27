@@ -14,7 +14,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { AboutMeComponent } from './Components/about-me/about-me.component'
+import { AboutMeComponent } from './Components/about-me/about-me.component';
+import { PortfolioComponent } from './Components/portfolio/portfolio.component';
+import { ContactMeComponent } from './Components/contact-me/contact-me.component'
 
 
 
@@ -24,6 +26,8 @@ import { AboutMeComponent } from './Components/about-me/about-me.component'
     NavigationBarComponent,
     HomePageComponent,
     AboutMeComponent,
+    PortfolioComponent,
+    ContactMeComponent,
     
   ],
   imports: [

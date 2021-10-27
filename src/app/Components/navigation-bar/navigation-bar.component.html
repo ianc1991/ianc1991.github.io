@@ -5,12 +5,11 @@
     </button>
   </div>
   <mat-toolbar class="navbar" fxShow="true" fxHide.lt-md="true">
-      <button class="glow-on-hover" [ngClass]="{'activeButton': isActiveAboutMe}" type="button" routerLink='/aboutme'>ABOUT ME</button>
-      <button class="glow-on-hover" [ngClass]="{'activeButton': isActivePortfolio}" type="button">PORTFOLIO</button>
-      <button class="glow-on-hover" [ngClass]="{'activeButton': isActiveContactMe}" type="button">CONTACT ME</button>
+      <button class="glow-on-hover" routerLinkActive="activeButton" type="button" routerLink='/aboutme'>ABOUT ME</button>
+      <button class="glow-on-hover" routerLinkActive="activeButton"  type="button" routerLink='/portfolio'>PORTFOLIO</button>
+      <button class="glow-on-hover" routerLinkActive="activeButton" type="button" routerLink='/contactme'>CONTACT ME</button>
   </mat-toolbar>
 </div>
-
 
 
 <mat-sidenav-container fxFlexFill class="sideNavContainer">
