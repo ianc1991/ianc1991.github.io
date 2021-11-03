@@ -6,8 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './Components/navigation-bar/navigation-bar.component';
 
-import {MenuModule} from 'primeng/menu';
-import {Ripple, RippleModule} from 'primeng/ripple';
+
 import { HomePageComponent } from './Components/home-page/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -33,8 +32,6 @@ import { ContactMeComponent } from './Components/contact-me/contact-me.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MenuModule,
-    RippleModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatButtonModule,
