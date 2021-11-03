@@ -10,9 +10,6 @@ import { NavigationBarComponent } from './Components/navigation-bar/navigation-b
 import { HomePageComponent } from './Components/home-page/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import {MatButtonModule} from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
 import { AboutMeComponent } from './Components/about-me/about-me.component';
 import { PortfolioComponent } from './Components/portfolio/portfolio.component';
 import { ContactMeComponent } from './Components/contact-me/contact-me.component'
@@ -33,10 +30,7 @@ import { ContactMeComponent } from './Components/contact-me/contact-me.component
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

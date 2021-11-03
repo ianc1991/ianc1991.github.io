@@ -1,21 +1,24 @@
 <div class="navContainer">
   <div class="dropDownContainer">
-      <span class="material-icons" (click)='isDisabled=!isDisabled'>
+      <span class="material-icons" (click)='toggleMenu()'>
         menu
       </span>
-    <div class="dropDownMenu" >
-      <ul *ngIf="isDisabled">
-        <li routerLinkActive="activeButton" type="button" routerLink='/aboutme'>ABOUT ME</li>
-        <li routerLinkActive="activeButton"  type="button" routerLink='/portfolio'>PORTFOLIO</li>
-        <li routerLinkActive="activeButton" type="button" routerLink='/contactme'>CONTACT ME</li>
+    <div class="dropDownMenu">
+      <ul class="dropDownList" [ngClass]="{'animateUl' : isDisabled}">
+          <li routerLinkActive="activeButton" [ngClass]="{'animateLi' : isDisabled, 'deLi' : !isDisabled}" routerLink='/aboutme'>ABOUT ME</li>
+          <li routerLinkActive="activeButton" [ngClass]="{'animateLi' : isDisabled, 'deLi' : !isDisabled}" routerLink='/portfolio'>PORTFOLIO</li>
+          <li routerLinkActive="activeButton" [ngClass]="{'animateLi' : isDisabled, 'deLi' : !isDisabled}" routerLink='/contactme'>CONTACT ME</li>
+        
       </ul>
       
     </div>
   </div>
-  <mat-toolbar class="navbar" fxShow="true" fxHide.lt-md="true" >
+  <div class="navbar">
       <button class="glow-on-hover" routerLinkActive="activeButton" type="button" routerLink='/aboutme'>ABOUT ME</button>
       <button class="glow-on-hover" routerLinkActive="activeButton"  type="button" routerLink='/portfolio'>PORTFOLIO</button>
       <button class="glow-on-hover" routerLinkActive="activeButton" type="button" routerLink='/contactme'>CONTACT ME</button>
-  </mat-toolbar>
+  </div>
 </div>
+
+
 

@@ -7,11 +7,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit, OnDestroy {
-  // isActiveAboutMe: boolean = false;
-  // isActivePortfolio: boolean = false;
-  // isActiveContactMe: boolean = false;
 
 isDisabled = false;
+runCloseMenu = false;
 
   constructor(private router: Router) { }
 
@@ -20,5 +18,9 @@ isDisabled = false;
   }
 
   ngOnInit(): void { 
+  }
+
+  toggleMenu() {
+    this.isDisabled = !this.isDisabled;
   }
 }

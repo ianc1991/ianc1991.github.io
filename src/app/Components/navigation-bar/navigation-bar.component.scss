@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
 .navContainer {
     display: flex;
     margin: 0;
@@ -76,26 +81,73 @@
 }
 
 /* Responsive Menu */
+@media screen and (max-width: 1000px) {
+    .navbar {
+        display: none;
+    }
 
-.dropDownContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+    .material-icons, li {
+        cursor: pointer;
+        color: black;
+    }
+
+    .dropDownContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .dropDownMenu {
+        display: flex;
+        position: absolute;
+        top: 21px;
+        width: 100%;
+    }
+
+    .dropDownList {
+        display: flex;
+        flex-direction: column;
+        background:linear-gradient(60deg, #000000 0%, #1d323a 50%,  #000000 100%);
+        color: white;
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0, 1);
+        transition: transform 400ms ease-in-out;
+        
+    }
+
+    .animateUl {
+        transform: scale(1, 1);
+    }
+
+    .animateLi {
+        color: white;
+        opacity: 1;
+        transition: opacity 300ms ease-in-out 300ms;
+    }
+
+    .liContainer {
+        
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .deLi {
+        transition: opacity 30ms ease-in-out;
+        opacity: 0;
+    }
+
+    li {
+        color: white;
+        padding: 15px;
+        width: 40%;
+        
+    }
 }
 
-.dropDownMenu {
-    display: flex;
-}
-
-.dropDownMenu ul {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: white;
-    list-style: none;
-}
