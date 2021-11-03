@@ -1,20 +1,50 @@
+@import url('https://fonts.google.com/specimen/Space+Mono?selection.family=Roboto&query=space');
+
 div.container {
+    font-family: 'Space Mono', monospace;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
     color: rgb(244, 255, 182);
-    background-image: url("../../../assets/Space2.png");
+    background-image: url("../../../assets/Space3.png");
     background-size:cover;
     background-repeat: no-repeat;
     height: 100%;
 }
 
 div.textBox1 {
-    text-align: center;
-    background-color: rgba(27, 0, 70, 0.568);
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.568);
+    width: 40vw;
     font-size: 20px;
     padding: 0%;
     margin: 0%;
 }
+
+.blinking-cursor {
+    font-weight: 900;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: rgb(244, 255, 182);
+    }
+  }
+
+
+@media (max-width: 800px) {
+
+    div.textBox1 {
+        font-size: 17px;
+        width: 80vw;
+    }
+  
+    div.container {
+        align-items: center;
+    }
+  
+  }

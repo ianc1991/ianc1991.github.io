@@ -1,23 +1,18 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
+h1, p {
+  font-family: 'Lato', sans-serif;
+}
 
 h1 {
-  font-family: 'Lato', sans-serif;
   font-weight:300;
   letter-spacing: 2px;
   font-size:48px;
   margin-top: 20px;
   margin-bottom: 0px;
 }
-.h3 {
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  letter-spacing: 2px;
-  font-size:24px;
-  margin-top: 0px;
-}
+
 p {
-  font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
   font-size:14px;
   color: #333333;
@@ -63,7 +58,7 @@ p {
 /* Waves Animation */
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
 }
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
@@ -89,7 +84,7 @@ p {
     transform: translate3d(85px,0,0);
   }
 }
-/*Shrinking for mobile*/
+
 @media (max-width: 800px) {
 
   /* waves */
