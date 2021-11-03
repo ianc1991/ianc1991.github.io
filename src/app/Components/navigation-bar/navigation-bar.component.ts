@@ -7,9 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit, OnDestroy {
-  isActiveAboutMe: boolean = false;
-  isActivePortfolio: boolean = false;
-  isActiveContactMe: boolean = false;
+  // isActiveAboutMe: boolean = false;
+  // isActivePortfolio: boolean = false;
+  // isActiveContactMe: boolean = false;
+
+isDisabled = false;
 
   constructor(private router: Router) { }
 

@@ -1,27 +1,21 @@
 <div class="navContainer">
-  <div fxShow="true" fxHide.gt-sm="true">
-    <button class="menuIcon" mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
+  <div class="dropDownContainer">
+      <span class="material-icons" (click)='isDisabled=!isDisabled'>
+        menu
+      </span>
+    <div class="dropDownMenu" >
+      <ul *ngIf="isDisabled">
+        <li routerLinkActive="activeButton" type="button" routerLink='/aboutme'>ABOUT ME</li>
+        <li routerLinkActive="activeButton"  type="button" routerLink='/portfolio'>PORTFOLIO</li>
+        <li routerLinkActive="activeButton" type="button" routerLink='/contactme'>CONTACT ME</li>
+      </ul>
+      
+    </div>
   </div>
-  <mat-toolbar class="navbar" fxShow="true" fxHide.lt-md="true">
+  <mat-toolbar class="navbar" fxShow="true" fxHide.lt-md="true" >
       <button class="glow-on-hover" routerLinkActive="activeButton" type="button" routerLink='/aboutme'>ABOUT ME</button>
       <button class="glow-on-hover" routerLinkActive="activeButton"  type="button" routerLink='/portfolio'>PORTFOLIO</button>
       <button class="glow-on-hover" routerLinkActive="activeButton" type="button" routerLink='/contactme'>CONTACT ME</button>
   </mat-toolbar>
 </div>
-
-
-<mat-sidenav-container fxFlexFill class="sideNavContainer">
-  <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
-    <div fxLayout="column">
-      <a mat-button routerLink="/aboutme" (click)="sidenav.toggle()">ABOUT ME</a>
-      <a mat-button routerLink="" (click)="sidenav.toggle()">PORTFOLIO</a>
-      <a mat-button routerLink="" (click)="sidenav.toggle()">CONTACT ME</a>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content fxFill>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
 

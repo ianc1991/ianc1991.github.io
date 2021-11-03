@@ -1,7 +1,7 @@
-@import url('https://fonts.google.com/specimen/Space+Mono?selection.family=Roboto&query=space');
+
 
 div.container {
-    font-family: 'Space Mono', monospace;
+    
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -11,6 +11,10 @@ div.container {
     background-size:cover;
     background-repeat: no-repeat;
     height: 100%;
+}
+
+h1, p {
+  font-family: 'Space Mono', monospace;
 }
 
 div.textBox1 {

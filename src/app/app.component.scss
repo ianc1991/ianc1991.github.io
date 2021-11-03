@@ -1,15 +1,19 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
-h1, p {
-  font-family: 'Lato', sans-serif;
+header {
+  height: 15%;
+}
+
+body {
+  height: 85%;
 }
 
 h1 {
+  font-family: 'Space Mono', monospace;
   font-weight:300;
   letter-spacing: 2px;
   font-size:48px;
-  margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 p {
