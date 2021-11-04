@@ -1,28 +1,30 @@
-
+* {
+  box-sizing: border-box;
+}
 
 div.container {
-    
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    color: rgb(244, 255, 182);
-    background-image: url("../../../assets/Space3.png");
-    background-size:cover;
-    background-repeat: no-repeat;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(244, 255, 182);
+  background-image: url("../../../assets/Space3.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  min-height: 84.5vh;
 }
 
 h1, p {
   font-family: 'Space Mono', monospace;
 }
 
-div.textBox1 {
+div.textBox {
     background-color: rgba(0, 0, 0, 0.568);
-    width: 40vw;
-    font-size: 20px;
-    padding: 0%;
-    margin: 0%;
+    
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    width: 80vw;
 }
 
 .blinking-cursor {
@@ -40,15 +42,15 @@ div.textBox1 {
   }
 
 
-@media (max-width: 800px) {
+@media (min-width: 1000px) {
 
-    div.textBox1 {
-        font-size: 17px;
-        width: 80vw;
+    div.textBox {
+      width: 40vw;
+      font-size: 20px;
     }
   
     div.container {
-        align-items: center;
+      align-items: flex-end;
     }
   
   }

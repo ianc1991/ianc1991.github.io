@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,11 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
 
 isDisabled = false;
 runCloseMenu = false;
+dropMenuHidden = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private elementRef: ElementRef
+              ) { }
 
   ngOnDestroy(): void {
     
@@ -23,4 +26,15 @@ runCloseMenu = false;
   toggleMenu() {
     this.isDisabled = !this.isDisabled;
   }
+
+  @HostListener("document:click", ['$event.target'])
+  onClick(target: Element) {
+    const clickedInside = this.elementRef.nativeElement.contains(target);
+    if (!clickedInside) {
+      this.isDisabled = false;
+    }
+    
+  }
+
+
 }

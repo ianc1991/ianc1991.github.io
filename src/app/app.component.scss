@@ -1,13 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
-header {
-  height: 15%;
-}
-
-body {
-  height: 85%;
-}
-
 h1 {
   font-family: 'Space Mono', monospace;
   font-weight:300;
@@ -23,21 +15,14 @@ p {
   color: #333333;
 }
 
-.header {
-  position:relative;
+div.header {
   text-align:center;
   background: linear-gradient(60deg, #000000 0%, rgb(0, 42, 61) 50%, #000000 100%);
   color:white;
-}
-
-.inner-header {
-  height:10vh;
+  min-height:10vh;
   width:100%;
   margin: 0;
   padding: 0;
-}
-
-.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
