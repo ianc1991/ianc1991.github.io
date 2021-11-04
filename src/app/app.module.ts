@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutMeComponent } from './Components/about-me/about-me.component';
 import { PortfolioComponent } from './Components/portfolio/portfolio.component';
 import { ContactMeComponent } from './Components/contact-me/contact-me.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,7 +31,8 @@ import { ContactMeComponent } from './Components/contact-me/contact-me.component
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

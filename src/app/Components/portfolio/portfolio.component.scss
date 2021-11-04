@@ -1,5 +1,42 @@
-.mainContainer {
-    display: flex;
-    justify-content: center;
+* {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1.3px;
 }
 
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    border: solid 1px white;  
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.gitHub a {
+    text-decoration: none;
+}
+
+.gitHub button {
+    display: flex;
+    align-items: center;    
+    background-color: rgba(2, 100, 100, 0.685);
+    border-radius: 10%;
+    color: white;
+}
+
+.gitHub img {
+    max-height: 40px;
+    width: 40px;
+}
+
+h3 {
+    color: white;
+}
