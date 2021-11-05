@@ -90,6 +90,7 @@
         100% { background-position: 0 0; }
     }
 }
+
 /* Responsive Menu */
 
     .navbar {
@@ -106,13 +107,13 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        position:absolute;
+        position:absolute;        
     }
 
     .dropDownList {
         display: flex;
         flex-direction: column;
-        background:black;
+        background:rgb(0, 19, 27);
         color: white;
         list-style: none;
         padding: 0;

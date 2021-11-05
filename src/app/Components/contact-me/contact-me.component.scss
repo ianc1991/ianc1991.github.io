@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 30px;
+    text-align: center;
+}
+
+.mailTo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mailTo img {
+    height: 40px;
+}

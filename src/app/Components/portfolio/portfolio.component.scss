@@ -27,14 +27,19 @@
 .gitHub button {
     display: flex;
     align-items: center;    
+    justify-content: space-between;
     background-color: rgba(2, 100, 100, 0.685);
-    border-radius: 10%;
+    border-radius: 5%;
     color: white;
+    padding: 0;
+    border-color: transparent;
+    cursor: pointer;
 }
 
 .gitHub img {
     max-height: 40px;
     width: 40px;
+    border-radius: 100%;
 }
 
 h3 {
