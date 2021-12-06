@@ -1,4 +1,4 @@
-This is the source code to my personal website. The repository has been moved here: https://github.com/iancognita/iancognita.github.io
+This is the source code to my personal website. The repository has been moved here for hosting to GitHub pages: https://github.com/iancognita/iancognita.github.io
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
