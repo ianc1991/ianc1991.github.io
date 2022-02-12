@@ -12,6 +12,8 @@ import { AboutMeComponent } from './Components/about-me/about-me.component';
 import { PortfolioComponent } from './Components/portfolio/portfolio.component';
 import { ContactMeComponent } from './Components/contact-me/contact-me.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomePage2Component } from './Components/home-page2/home-page2.component';
+import { ThreejsobjComponent } from './Components/threejsobj/threejsobj.component';
 
 
 
@@ -23,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutMeComponent,
     PortfolioComponent,
     ContactMeComponent,
+    HomePage2Component,
+    ThreejsobjComponent,
     
   ],
   imports: [
