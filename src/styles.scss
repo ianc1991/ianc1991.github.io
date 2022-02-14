@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@font-face {
-  font-family: "Space Mono";
-  src: local("Space Mono"), url(./assets/Fonts/SpaceMono-Regular.ttf) format("truetype");
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 html, body {
+  font-family: 'Source Sans Pro', sans-serif;
   height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black;
+    //background-color: #0a192f;
+    background-image:
+    linear-gradient(
+      to right, 
+      black 0%, 
+      #0a192f 10%,
+      #0a192f 90%,
+      black 100%
+    );
   }

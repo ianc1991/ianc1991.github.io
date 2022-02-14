@@ -1,0 +1,255 @@
+.mainContainer {
+    color: #ccd6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.greetingTitle {
+    text-align: center;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    line-height: .9;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    & span {
+        color: #8892b0;
+    }
+}
+
+.aboutMeContainer {
+    margin-top: 10%;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    
+
+    & h1, h2, h4, p {
+        width: 80%;
+        margin: 0;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    & h4 {
+        font-size: 1.4rem;
+    }
+
+    & h1 {
+        font-size: 5rem;
+    }
+
+    & p {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+
+}
+
+.square2 {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.gitHub2 a {
+    text-decoration: none;
+}
+
+.gitHub2 button {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    background-color: rgba(2, 100, 100, 0.685);
+    border-radius: 5%;
+    color: white;
+    padding: 0;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.gitHub2 img {
+    max-height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+/* PROJECTS */
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.projectCards {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 400px;
+    gap: 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.projectCards .card {
+    
+    color: #a8b2d1;
+
+    & h2 {
+        text-align: left;
+        margin-bottom: 0;
+        margin-top: .2rem;
+        color: #ccd6f6;
+        width: 400px;
+    }
+
+    & h4 {
+        color: #ccd6f6;
+        margin-top: .1rem;
+        margin-bottom: .1rem;
+    }
+
+    & p {
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+
+    & ul {
+        list-style-type: none;
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 1rem;
+    }
+
+    & .listContainer {
+        color: #8892b0;
+        display: flex;
+        margin-top: 0;
+    }
+
+    & .descriptionContainer {
+        //background-color: #112240;
+        width: 50%;
+        padding: 0px 25px 15px 0px;
+    }
+
+    & .descriptionContainer p {
+        margin: 0;
+        text-align: left;
+    }
+
+}
+
+/* Github button */
+.square {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gitHub a {
+    text-decoration: none;
+}
+
+.gitHub button {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    border-radius: 5%;
+    background-color: #0a192f;
+    padding: 0;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.gitHub img {
+    max-height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.cardTitle p {
+    color: #64ffda;
+    text-align: left;
+}
+
+.cardTitle h2 {
+    text-align: left;
+}
+
+.greenText {
+    color: #64ffda;
+}
+
+.whiteText {
+    color: #e6f1ff;
+}
+
+.imgContainer {
+    margin-top: .5rem;
+    text-align: left;
+}
+
+.imgContainer img {
+    max-width: 100%;
+    height: auto;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition-duration: .5s;
+
+    &:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+        box-shadow: 0 0 0 5px #64ffda;
+        transition-duration: .5s;
+    }
+}
+
+.textImageDivider {
+    display: flex;
+    flex-direction: column;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+} 
+
+/* Animations */
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+.fade-in-element {
+  animation: fade-in 1.4s;
+}

@@ -14,6 +14,8 @@ import { ContactMeComponent } from './Components/contact-me/contact-me.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomePage2Component } from './Components/home-page2/home-page2.component';
 import { ThreejsobjComponent } from './Components/threejsobj/threejsobj.component';
+import { HomePageMinComponent } from './Components/home-page-min/home-page-min.component';
+import { ScrollToTopComponent } from './Components/scroll-to-top/scroll-to-top.component';
 
 
 
@@ -27,6 +29,8 @@ import { ThreejsobjComponent } from './Components/threejsobj/threejsobj.componen
     ContactMeComponent,
     HomePage2Component,
     ThreejsobjComponent,
+    HomePageMinComponent,
+    ScrollToTopComponent,
     
   ],
   imports: [

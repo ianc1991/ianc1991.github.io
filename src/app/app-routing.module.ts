@@ -1,17 +1,11 @@
-import { ContactMeComponent } from './Components/contact-me/contact-me.component';
-import { PortfolioComponent } from './Components/portfolio/portfolio.component';
-import { AboutMeComponent } from './Components/about-me/about-me.component';
-import { NgModule, Component } from '@angular/core';
+
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './Components/home-page/home-page/home-page.component';
-import { ThreejsobjComponent } from './Components/threejsobj/threejsobj.component';
+import { HomePageMinComponent } from './Components/home-page-min/home-page-min.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'aboutme',  pathMatch: 'full' },
-  { path: 'aboutme', component: AboutMeComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'contactme', component: ContactMeComponent },
-  { path: 'threejsobj', component: ThreejsobjComponent }
+  { path: '', redirectTo:'home',  pathMatch: 'full' },
+  { path: 'home', component: HomePageMinComponent }
 
 ];
 
