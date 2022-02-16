@@ -3,10 +3,11 @@
     color: white;
     justify-content: center;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .square {
-    width: 65%;
+    width: 80%;
 }
 
 .greenText {
@@ -14,7 +15,7 @@
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -26,4 +27,17 @@ h3 {
 
 .mailTo img {
     height: 40px;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 800px) {
+    .square {
+        width: 65%;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }

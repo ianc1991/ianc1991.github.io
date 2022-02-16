@@ -156,7 +156,7 @@
 
     & .descriptionContainer {
         //background-color: #112240;
-        width: 50%;
+        width: auto;
         padding: 0px 25px 15px 0px;
     }
 
@@ -271,6 +271,12 @@
 
         & span {
             font-size: 3.2rem;
+        }
+    }
+
+    .projectCards .card {
+        & p {
+            width: 50%;
         }
     }
   }
