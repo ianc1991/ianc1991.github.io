@@ -33,6 +33,7 @@
 
     & span {
         color: #8892b0;
+        font-size: .8rem;
     }
 }
 
@@ -43,7 +44,6 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    
 
     & h1, h2, h4, p {
         width: 80%;
@@ -53,19 +53,17 @@
     }
 
     & h4 {
-        font-size: 1.4rem;
+        font-size: .8rem;
     }
 
     & h1 {
-        font-size: 5rem;
+        font-size: 2.3rem;
     }
 
     & p {
-        font-size: 1.5rem;
+        font-size: .8rem;
         margin-top: 1rem;
     }
-
-
 }
 
 .square2 {
@@ -105,14 +103,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    max-width: 80%;
 }
 
 .projectCards {
     display: flex;
     flex-direction: column;
     width: 80%;
-    min-width: 400px;
+    //min-width: 400px;
     gap: 5rem;
     justify-content: flex-start;
     align-items: flex-start;
@@ -127,7 +125,7 @@
         margin-bottom: 0;
         margin-top: .2rem;
         color: #ccd6f6;
-        width: 400px;
+        width: 200px;
     }
 
     & h4 {
@@ -253,3 +251,26 @@
 .fade-in-element {
   animation: fade-in 1.4s;
 }
+
+/* Desktop */
+@media screen and (min-width: 800px) {
+    .aboutMeContainer {
+    
+        & h4 {
+            font-size: 1.4rem;
+        }
+    
+        & h1 {
+            font-size: 5rem;
+        }
+    
+        & p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        & span {
+            font-size: 3.2rem;
+        }
+    }
+  }
