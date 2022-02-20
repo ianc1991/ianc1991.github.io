@@ -12,6 +12,9 @@
                 I found a career path that excites me. I'm eager to join a team and put my skills to real world use, while continuing to learn along the way.
         </p>
     </div>
+    <div class="emailHeader">
+        <app-contact-me></app-contact-me>
+    </div>
     <div class="projectsContainer">
         <div class="projectCards">
             <div class="movieDbCard card">
@@ -20,7 +23,7 @@
                     <h2>MovieDB</h2>
                 </span> 
                 <div class="imgContainer">
-                    <img src="../../../assets/moviedb.png">
+                    <a href="https://github.com/ianc1991/MovieDB" target="_blank"><img src="../../../assets/moviedb.png"></a>
                 </div>
                 <div class="listContainer">
                     <ul class="frontEndList">
@@ -28,6 +31,7 @@
                         <li>// React / JavaScript</li>
                         <li>// React Router</li>
                         <li>// Bootstrap</li>
+                        <li>// Axios</li>
                         <li>// Promise Tracker</li>
                     </ul>
                     <ul class="frontEndList">
@@ -37,14 +41,14 @@
                         <li>// Node</li>
                         <li>// JSON Web Token</li>
                         <li>// Bcrypt</li>
-                        <li>// Axios</li>
                     </ul>
                 </div>
                 <div class="descriptionContainer">
                     <p>
                         A current work in progress <span class="greenText">MERN</span> stack project that gets data from the Mflix 
-                        <span class="greenText">MongoDB</span> database. One server is used for pulling movie data,
-                        while another handles registering/login authorization. Registered users can leave comments on movie pages. More features to come!
+                        <span class="greenText">MongoDB</span> database. A Node server on the back end handles database requests such as getting 
+                        movie details and user authorization. JSON web tokens are used for user authorizaztion, while Bcrypt hashes and salts passwords
+                        stored in the database. Registered users can leave comments on movie pages. More features to come!
                     </p>
                 </div>
                 <div class="square gitHub">
@@ -62,7 +66,7 @@
                 </span> 
                 <div class="textImageDivider">
                     <div class="imgContainer">
-                        <img src="../../../assets/spacetourism.png">
+                        <a href="https://spacetourism-5a715.web.app/home" target="_blank"><img src="../../../assets/spacetourism.png"></a>
                     </div>
                     <div class="listContainer">
                         <ul class="frontEndList">
@@ -73,7 +77,7 @@
                         <div class="descriptionContainer">
                             <p>
                                 A project challenge from <a class="whiteText" href="https://www.frontendmentor.io" target="_blank">frontendmentor.io</a> where the user is given a <span class="greenText">Sketch/Figma</span> file & assets, tasked with creating a web page
-                                as close to the intended design as possible. <span class="greenText">I have hosted this project here:</span> <a class="whiteText" href="https://spacetourism-5a715.web.app/home" target="_blank">https://spacetourism-5a715.web.app/home</a>
+                                as close to the intended design as possible. <span class="greenText">I have hosted this project here: </span> <a class="whiteText" href="https://spacetourism-5a715.web.app/home" target="_blank">https://spacetourism-5a715.web.app/home</a>
                             </p>
                         </div>
                         <div class="square gitHub">
@@ -89,6 +93,8 @@
             </div>
         </div>
     </div>
-
+</div>
+<div class="emailFooter">
+    <app-contact-me></app-contact-me>
 </div>
 
