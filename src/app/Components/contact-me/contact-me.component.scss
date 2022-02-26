@@ -1,10 +1,6 @@
 .container {
     display: flex;
     color: white;
-    justify-content: center;
-}
-
-.square {
     width: 80%;
 }
 
@@ -12,21 +8,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    & a {
+        color: white;
+        text-decoration-color: white;
+    }
 }
 
 .mailTo img {
     height: 40px;
 }
 
+h3 {
+    font-size: .5rem;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 800px) {
-    .square {
-        width: 65%;
-    }
 
-    h3 {
-        font-size: 1.5rem;
-        text-align: center;
+    .mailTo p {
+        font-size: 1.2rem;
     }
 }
