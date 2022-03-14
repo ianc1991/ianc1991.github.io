@@ -22,6 +22,7 @@
 .greetingTitle {
     width: 100%;
     text-align: center;
+    padding-bottom: 5px;
 }
 
 .name {
@@ -39,12 +40,12 @@
 }
 
 .aboutMeContainer {
-    margin-top: 10%;
-    margin-bottom: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 80%;
+    height: 100vh;
 
     & h1, h2, h4, p {
         width: 80%;
@@ -65,6 +66,32 @@
         font-size: .8rem;
         margin-top: 1rem;
     }
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+      bottom: 100px;
+    }
+    50% {
+      bottom: 110px;
+    }
+  }
+
+.arrow {
+    border: solid #64ffda;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    animation: MoveUpDown 1s linear infinite;
+    position: absolute;
+    bottom: 100px;
+    cursor: pointer;
+  }
+
+.hideArrow {
+    display: none;
 }
 
 .square2 {
@@ -139,7 +166,7 @@
         text-align: left;
         margin-top: 0;
         margin-bottom: 0;
-        font-size: 1rem;
+        font-size: .9rem;
     }
 
     & ul {
@@ -147,6 +174,7 @@
         margin-top: 0;
         padding-left: 0;
         padding-right: 1rem;
+        font-size: .9rem;
     }
 
     & .listContainer {
@@ -214,14 +242,19 @@
     color: #e6f1ff;
 }
 
+.outerImgContainer {
+    display: flex;
+    width: 100%;
+}
+
 .imgContainer {
     margin-top: .5rem;
     text-align: left;
+
 }
 
 .imgContainer img {
-    max-width: 100%;
-    height: auto;
+    width: 250px;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition-duration: .5s;
@@ -286,7 +319,16 @@
 
     .projectCards .card {
         & p {
+            font-size: 1rem;
             width: 50%;
         }
+
+        & ul {
+            font-size: 1rem;
+        }
+    }
+
+    .imgContainer img {
+        width: 450px;
     }
   }

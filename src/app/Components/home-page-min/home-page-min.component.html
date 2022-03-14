@@ -12,16 +12,22 @@
         <div class="emailHeader">
             <app-contact-me></app-contact-me>
         </div>
+        <div class="arrowContainer" [ngClass]="{'hideArrow': windowScrolled}" onclick="document.getElementById('scrollToCard').scrollIntoView({behavior:'smooth'});">
+            <p><i class="arrow down"></i></p>
+        </div>
     </div>
     <div class="projectsContainer">
         <div class="projectCards">
-            <div class="movieDbCard card">
+            <div id="scrollToCard" class="movieDbCard card">
                 <span class="cardTitle">
                     <p>Featured Project</p>
                     <h2>MovieDB</h2>
                 </span> 
-                <div class="imgContainer">
-                    <a href="https://github.com/ianc1991/MovieDB" target="_blank"><img src="../../../assets/moviedb.png"></a>
+                <div class="outerImgContainer">
+                    <div class="imgContainer">
+                        <a href="https://github.com/ianc1991/MovieDB" target="_blank"><img src="../../../assets/MovieDB_Desktop.webp" alt="MovieDB desktop"></a>
+                        <a href="https://github.com/ianc1991/MovieDB" target="_blank"><img src="../../../assets/MovieDB_Mobile.webp" alt="MovieDB mobile"></a>
+                    </div>
                 </div>
                 <div class="listContainer">
                     <ul class="frontEndList">
@@ -64,7 +70,8 @@
                 </span> 
                 <div class="textImageDivider">
                     <div class="imgContainer">
-                        <a href="https://spacetourism-5a715.web.app/home" target="_blank"><img src="../../../assets/spacetourism.png"></a>
+                        <a href="https://spacetourism-5a715.web.app/home" target="_blank"><img src="../../../assets/Space_Tourism_Mockup_3.webp" alt="Space Tourism desktop"></a>
+                        <a href="https://spacetourism-5a715.web.app/home" target="_blank"><img src="../../../assets/Space_Tourism_Mockup_4.webp" alt="Space Tourism mobile"></a>
                     </div>
                     <div class="listContainer">
                         <ul class="frontEndList">

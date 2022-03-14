@@ -9,6 +9,11 @@ export class HomePageMinComponent implements OnInit {
 
   constructor() { }
 
+  windowScrolled = false;
+
   ngOnInit(): void {
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
   }
 }
