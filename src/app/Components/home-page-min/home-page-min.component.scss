@@ -242,14 +242,15 @@
     color: #e6f1ff;
 }
 
-.outerImgContainer {
-    display: flex;
-    width: 100%;
-}
-
 .imgContainer {
     margin-top: .5rem;
     text-align: left;
+    transition-duration: .5s;
+    width: auto;
+
+    &:hover {
+        box-shadow: 0 0 0 5px #64ffda;
+    }
 
 }
 
@@ -262,7 +263,7 @@
     &:hover {
         -webkit-filter: grayscale(0%);
         filter: grayscale(0%);
-        box-shadow: 0 0 0 5px #64ffda;
+        
         transition-duration: .5s;
     }
 }
