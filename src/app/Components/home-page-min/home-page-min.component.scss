@@ -109,7 +109,7 @@
 
 .gitHub2 button {
     display: flex;
-    align-items: center;    
+    align-items: center;
     justify-content: space-between;
     background-color: rgba(2, 100, 100, 0.685);
     border-radius: 5%;
@@ -145,7 +145,6 @@
 }
 
 .projectCards .card {
-    
     color: #a8b2d1;
 
     & h2 {
@@ -184,7 +183,6 @@
     }
 
     & .descriptionContainer {
-        //background-color: #112240;
         width: auto;
         padding: 0px 25px 15px 0px;
     }
@@ -192,6 +190,7 @@
     & .descriptionContainer p {
         margin: 0;
         text-align: left;
+        width: 80%;
     }
 
 }
@@ -210,7 +209,7 @@
 
 .gitHub button {
     display: flex;
-    align-items: center;    
+    align-items: center;
     justify-content: space-between;
     border-radius: 5%;
     background-color: #0a192f;
@@ -244,7 +243,7 @@
 
 .imgContainer {
     margin-top: .5rem;
-    text-align: left;
+    text-align: center;
     transition-duration: .5s;
     width: auto;
 
@@ -256,16 +255,6 @@
 
 .imgContainer img {
     width: 250px;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    transition-duration: .5s;
-
-    &:hover {
-        -webkit-filter: grayscale(0%);
-        filter: grayscale(0%);
-        
-        transition-duration: .5s;
-    }
 }
 
 .textImageDivider {
@@ -276,7 +265,7 @@
 .textContainer {
     display: flex;
     flex-direction: column;
-} 
+}
 
 .emailFooter {
     margin: 100px auto;
@@ -299,15 +288,15 @@
 /* Desktop */
 @media screen and (min-width: 800px) {
     .aboutMeContainer {
-    
+
         & h4 {
             font-size: 1.4rem;
         }
-    
+
         & h1 {
             font-size: 5rem;
         }
-    
+
         & p {
             font-size: 1.5rem;
             margin-top: 1rem;
