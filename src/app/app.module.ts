@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ContactMeComponent } from './Components/contact-me/contact-me.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageMinComponent } from './Components/home-page-min/home-page-min.component';
+import { StarBackgroundComponent } from './Components/star-background/star-background.component';
 
 
 
@@ -17,7 +18,7 @@ import { HomePageMinComponent } from './Components/home-page-min/home-page-min.c
     AppComponent,
     ContactMeComponent,
     HomePageMinComponent,
-    
+    StarBackgroundComponent,
   ],
   imports: [
     BrowserModule,

@@ -35,12 +35,12 @@ export class ThreejsobjComponent implements OnInit, AfterViewInit {
 
   objLoader = new OBJLoader();
   mtlLoader = new MTLLoader();
-  
+
   private loader = new THREE.TextureLoader()
   private geometry = new THREE.BoxGeometry(1, 1, 1)
   //private material = new THREE.MeshBasicMaterial({ map: this.loader.load(this.texture) })
 
-  private cube: THREE.Mesh = new THREE.Mesh(this.geometry, 
+  private cube: THREE.Mesh = new THREE.Mesh(this.geometry,
     //this.material
   )
 
@@ -52,7 +52,7 @@ export class ThreejsobjComponent implements OnInit, AfterViewInit {
     // Scene
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x000000)
-    
+
     // Light
     const pointLight = new THREE.PointLight(0xffffff)
     const pointLight2 = new THREE.PointLight(0xffffff)
@@ -61,7 +61,7 @@ export class ThreejsobjComponent implements OnInit, AfterViewInit {
     pointLight2.position.set(0, 180, 40)
     this.scene.add(pointLight, pointLight2)
     // Light Helper
-     const lightHelper = new THREE.PointLightHelper(pointLight2);
+    const lightHelper = new THREE.PointLightHelper(pointLight2);
     // const gridHelper = new THREE.GridHelper(200, 50);
     //this.scene.add(lightHelper);
 
@@ -74,7 +74,7 @@ export class ThreejsobjComponent implements OnInit, AfterViewInit {
         this.objLoader.load(
           '../../assets/ThreeJS/Project Name.obj',
           (object) => {
-            
+
             this.scene.add(object)
           }
         )
@@ -115,14 +115,14 @@ export class ThreejsobjComponent implements OnInit, AfterViewInit {
       component.renderer.render(component.scene, component.camera)
     }())
   }
-  
+
   constructor() {}
 
   ngAfterViewInit() {
     this.createScene()
     this.startRenderingLoop()
   }
-  
+
   ngOnInit(): void {
   }
 
