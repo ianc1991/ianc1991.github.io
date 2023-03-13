@@ -1,85 +1,144 @@
-import { Component, OnInit } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core'
 import * as THREE from 'three'
-import { BufferGeometry, Mesh, MeshBasicMaterial, PointsMaterial, SphereGeometry } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { BufferGeometry, Color, Group, Mesh, MeshBasicMaterial, Points, PointsMaterial, SphereGeometry } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 @Component({
   selector: 'app-star-background',
   templateUrl: './star-background.component.html',
   styleUrls: ['./star-background.component.scss']
 })
-export class StarBackgroundComponent implements OnInit {
-  scene!: THREE.Scene
-  camera!: THREE.Camera
-  renderer!: THREE.WebGLRenderer
-  geometry!: BufferGeometry
-  material!: MeshBasicMaterial
-  stars!: any[]
-  sphere!: THREE.Mesh
-  light!: THREE.DirectionalLight
+export class StarBackgroundComponent implements AfterViewInit {
+  scene = new THREE.Scene()
+  camera = new THREE.PerspectiveCamera(
+    75, // FOV - Field of view
+    window.innerHeight / window.innerHeight, // Aspect Ratio
+    0.1, // Near
+    1000 // Far
+  )
+  renderer = new THREE.WebGLRenderer()
+  geometry = new THREE.BufferGeometry()
+  textureLoader = new THREE.TextureLoader()
+  sprite = new THREE.TextureLoader().load( '../../assets/star2.webp' )
+  material = new THREE.MeshStandardMaterial({
+    color: 0xffffff,
+    metalness: 1,
+    roughness: 0,
+  })
+  vertices : any[] = []
+  ambientlight = new THREE.AmbientLight(0xffffff, 2)
+  pointLight = new THREE.PointLight(0xffffff, 2)
   time = 0
+  windowHalfX = 0
+  windowHalfY = 0
+  mouseX = 0
+  mouseY = 0
+  particles!: any
+  controls!: OrbitControls
+  container!: HTMLElement
+  stars!: Points
+  gltfLoader = new GLTFLoader()
+  mainStar!: Group
+  color = new THREE.Color()
+  colors: any[] = []
+
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.scene = new THREE.Scene()
-    this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-		this.camera.position.z = 650;
-    this.light = new THREE.DirectionalLight(0xffffff, 1000);
-    this.light.position.set(0, 0, 500);
-    this.scene.add(this.light);
+  async ngAfterViewInit(): Promise<void> {
+    this.container = document.getElementById('starElm') as HTMLElement
+    this.container.appendChild(this.renderer.domElement)
+    this.ambientlight.position.set(0, 0, 0)
+    this.pointLight.position.set(0, 0, 0)
+    this.scene.add(this.ambientlight)
+    this.scene.add(this.pointLight)
+		this.camera.position.z = 3
+    this.scene.add(this.camera)
 
-    this.renderer = new THREE.WebGLRenderer();
+    // Controls
+    //this.controls = new OrbitControls(this.camera, this.container);
+    //this.controls.enableDamping = true // Set to true is used to give a sense of weight to the controls
+    // Particles
+    const particlesGeometry = new THREE.BufferGeometry() // Geometry for the stars
+    const particlesCount = 15000 // number of particles to be created
+    const vertices = new Float32Array(particlesCount) // Float32Array is an array of 32-bit floats. This is used to represent an array of vertices. (we have 3 values for each vertex - coordinates x, y, z)
+    for (let i = 0; i < particlesCount; i++) {
+      vertices[i] = (Math.random() - 0.5) * 100 // -0.5 to get the range from -0.5 to 0.5 than * 100 to get a range from -50 to 50
+      this.color.setHSL(Math.random(), 1.0, 0.5)
+      this.colors.push(this.color.r, this.color.g, this.color.b)
+    }
+    particlesGeometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(vertices, 3) // 3 values for each vertex (x, y, z)
+    )
+    particlesGeometry.setAttribute('color', new THREE.Float32BufferAttribute(this.colors, 3))
+    // Texture
+    const particleTexture = this.textureLoader.load('../../assets/star.png'); // Add a texture to the particles
+    // Material
+    const particlesMaterial = new THREE.PointsMaterial({
+      map: particleTexture, // Texture
+      size: 0.5, // Size of the particles
+      sizeAttenuation: true, // size of the particle will be smaller as it gets further away from the camera, and if it's closer to the camera, it will be bigger
+      vertexColors: false,
+    })
+
+    this.stars = new THREE.Points(particlesGeometry, particlesMaterial);
+    this.scene.add(this.stars)
+
+    await this.addMainStar()
+
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    const container = document.getElementById('starElm')
-    container!.appendChild(this.renderer.domElement)
-    this.addSphere()
+    this.camera.aspect = window.innerWidth / window.innerHeight
+    this.camera.updateProjectionMatrix()
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // to avoid pixelation on high resolution screens
+
+
+    document.body.style.touchAction = 'none'
+    //this.addSphere()
     this.animate()
   }
 
   ngOnDestroy() {
     this.renderer.dispose()
-    this.scene.remove(this.sphere)
+    this.scene.remove(this.stars)
     this.material.dispose()
     this.geometry.dispose()
   }
 
   animate() {
     requestAnimationFrame(() => this.animate())
+    this.stars.rotation.y += .0005
+    if (this.mainStar) this.mainStar.rotation.y += .0005
+    this.render()
+  }
 
-    this.animateStars()
-
+  render() {
+    //this.controls.update()
     this.renderer.render(this.scene, this.camera)
   }
 
-  animateStars() {
-    // loop through each star
-    for(var i=0; i< this.stars.length; i++) {
-      let lightness = 0
-      let star = this.stars[i]
-      lightness > 100 ? lightness = 0 : lightness++;
-    }
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    // this.windowHalfX = window.innerWidth / 2
+		// this.windowHalfY = window.innerHeight / 2
+    this.camera.aspect = window.innerWidth / window.innerHeight
+    this.camera.updateProjectionMatrix()
+    this.renderer.setSize( window.innerWidth, window.innerHeight )
   }
 
-  addSphere() {
-    // The loop will move from z position of -1000 to z position 1000, adding a random particle at each position.
-    for ( var z= -5000; z < 5000; z+=20 ) {
-      this.stars = [];
-      const textureLoader = new THREE.TextureLoader();
-      const texture = textureLoader.load("../../assets/star.jpg");
-      // Make a sphere
-      let geometry = new THREE.PlaneGeometry(0.5, 0.5)
-      let material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
-      let sphere = new THREE.Mesh(geometry, material)
+  // @HostListener('document:mousemove', ['$event'])
+  // onPointerMove( event: PointerEvent ) {
 
-      // we give the sphere random x and y positions between -500 and 500
-      sphere.position.x = Math.random() * 1000 - 500;
-      sphere.position.y = Math.random() * 1000 - 500;
+  // }
 
-      //add the sphere to the scene
-      this.scene.add( sphere );
-
-      // push it to the stars array
-      this.stars.push(sphere);
-    }
+  async addMainStar() {
+    this.gltfLoader.load('../../assets/main-star.gltf', (gltf) => {
+      console.log('hello')
+      this.mainStar = gltf.scene
+      this.mainStar.scale.set(0.0014, 0.0014, 0.0014)
+      this.mainStar.position.set(0, 0, -8)
+      this.scene.add(this.mainStar)
+    })
   }
 }
