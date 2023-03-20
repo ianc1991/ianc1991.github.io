@@ -20,7 +20,7 @@ export class StarBackgroundComponent implements AfterViewInit {
   renderer = new THREE.WebGLRenderer()
   textureLoader = new THREE.TextureLoader()
   vertices : any[] = []
-  ambientlight = new THREE.AmbientLight("#002ae3", 5)
+  ambientLight = new THREE.AmbientLight("#002ae3", 5)
   pointLight = new THREE.PointLight(0xffffff, 2)
   container!: HTMLElement
   stars!: Points
@@ -34,9 +34,9 @@ export class StarBackgroundComponent implements AfterViewInit {
   async ngAfterViewInit(): Promise<void> {
     this.container = document.getElementById('starElm') as HTMLElement
     this.container.appendChild(this.renderer.domElement)
-    this.ambientlight.position.set(0, 0, 3)
+    this.ambientLight.position.set(0, 0, 3)
     this.pointLight.position.set(0, 0, 3)
-    this.scene.add(this.ambientlight)
+    this.scene.add(this.ambientLight)
     this.scene.add(this.pointLight)
 		this.camera.position.z = 0
     this.scene.add(this.camera)
