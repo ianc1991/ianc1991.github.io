@@ -1,19 +1,19 @@
 <div class="mainContainer">
   <app-star-background></app-star-background>
     <div class="aboutMeContainer">
-        <h4 class="greenText">Hello, there! My name is</h4>
-        <div class="name">
-            <h1 class="greetingTitle">Ian Christian.</h1>
-        </div>
-        <p>
-            <span class="greenText">Thanks for checking out my projects!</span>
-        </p>
-        <div class="emailHeader">
-            <app-contact-me></app-contact-me>
-        </div>
-        <div class="arrowContainer" [ngClass]="{'hideArrow': windowScrolled}" onclick="document.getElementById('scrollToCard').scrollIntoView({behavior:'smooth'});">
-            <p><i class="arrow down"></i></p>
-        </div>
+			<h4 class="greenText">Hello, there! My name is</h4>
+			<div class="name">
+					<h1 class="greetingTitle">Ian Christian.</h1>
+			</div>
+			<p>
+					<span class="greenText">Thanks for checking out my projects!</span>
+			</p>
+			<div class="emailHeader">
+					<app-contact-me></app-contact-me>
+			</div>
+			<div class="arrowContainer" [ngClass]="{'hideArrow': windowScrolled}" onclick="document.getElementById('scrollToCard').scrollIntoView({behavior:'smooth'});">
+					<p><i class="arrow down"></i></p>
+			</div>
     </div>
     <div class="projectsContainer">
         <div class="projectCards">
@@ -143,4 +143,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="buttons">
+	<button (click)="increaseRotation()">Increase Rotation</button>
+	<button (click)="decreaseRotation()">Decrease Rotation</button>
+	<button (click)="stopRotation()">Stop Rotation</button>
 </div>
