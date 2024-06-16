@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { StarControlService } from 'src/app/Services/star-control.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HomePageMinComponent implements OnInit {
   constructor(private starControlService: StarControlService) {}
 
   windowScrolled = false;
+  isMobile = window.innerWidth < 768;
 
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
@@ -27,5 +28,10 @@ export class HomePageMinComponent implements OnInit {
 
   stopRotation() {
     this.starControlService.setRotation(0, 0);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isMobile = window.innerWidth < 768;
   }
 }

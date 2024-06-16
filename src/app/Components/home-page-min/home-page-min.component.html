@@ -1,152 +1,200 @@
 <div class="mainContainer">
-  <app-star-background></app-star-background>
-    <div class="aboutMeContainer">
-			<h4 class="greenText">Hello, there! My name is</h4>
-			<div class="name">
-					<h1 class="greetingTitle">Ian Christian.</h1>
-			</div>
-			<p>
-					<span class="greenText">Thanks for checking out my projects!</span>
-			</p>
-			<div class="emailHeader">
-					<app-contact-me></app-contact-me>
-			</div>
-			<div class="arrowContainer" [ngClass]="{'hideArrow': windowScrolled}" onclick="document.getElementById('scrollToCard').scrollIntoView({behavior:'smooth'});">
-					<p><i class="arrow down"></i></p>
-			</div>
+  <app-star-background *ngIf="isMobile === false"></app-star-background>
+  <div class="aboutMeContainer">
+    <h4 class="greenText">Hello, there! My name is</h4>
+    <div class="name">
+      <h1 class="greetingTitle">Ian Christian.</h1>
     </div>
-    <div class="projectsContainer">
-        <div class="projectCards">
-            <div id="scrollToCard" class="tabifyCard card">
-                <span class="cardTitle">
-                    <p>Featured Project</p>
-                    <h2>Tabify</h2>
-                </span>
-                <a href="https://github.com/ianc1991/Spotify-Tabs" target="_blank">
-                    <div class="imgContainer">
-                        <img src="../../../assets/tabify-desktop.webp" alt="Tabify desktop">
-                        <img src="../../../assets/tabify-mobile.webp" alt="Tabify mobile">
-                    </div>
-                </a>
-                <div class="listContainer">
-                    <ul class="frontEndList">
-                        <h4>Front End</h4>
-                        <li>// React / JavaScript</li>
-                        <li>// React Router</li>
-                        <li>// Material UI</li>
-                        <li>// Axios</li>
-                    </ul>
-                    <ul class="frontEndList">
-                        <h4>Back End</h4>
-                        <li>// NodeJS</li>
-                        <li>// Express</li>
-                        <li>// Spotify API</li>
-                        <li>// Puppeteer</li>
-                        <li>// Color Thief</li>
-                    </ul>
-                </div>
-                <div class="descriptionContainer">
-                    <p>
-                        <span class="greenText">Tabify</span> is a full stack app using the <span class="greenText">Spotify API</span>
-                        and <span class="greenText">Puppeteer</span> to scrape data from Ultimate Guitar. Users see a list of guitar tabs based on the currently playing song in their Spotify.
-                    </p>
-                </div>
-                <div class="square gitHub">
-                    <a href="https://github.com/ianc1991/Spotify-Tabs" target="_blank">
-                        <button>
-                            <img src="../../../assets/github.png" alt="github">
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="movieDbCard card">
-                <span class="cardTitle">
-                    <p>Featured Project</p>
-                    <h2>MovieDB</h2>
-                </span>
-                <a href="https://github.com/ianc1991/movie-db2-front-end-" target="_blank">
-                    <div class="imgContainer">
-                        <img src="../../../assets/MovieDB_Desktop.webp" alt="MovieDB desktop">
-                        <img src="../../../assets/MovieDB_Mobile.webp" alt="MovieDB mobile">
-                    </div>
-                </a>
-                <div class="listContainer">
-                    <ul class="frontEndList">
-                        <h4>Front End</h4>
-                        <li>// React / JavaScript</li>
-                        <li>// React Router</li>
-                        <li>// Bootstrap</li>
-                        <li>// Axios</li>
-                        <li>// Promise Tracker</li>
-                    </ul>
-                    <ul class="frontEndList">
-                        <h4>Back End</h4>
-                        <li>// MongoDB / Mongoose</li>
-                        <li>// Express</li>
-                        <li>// Node</li>
-                        <li>// JSON Web Token</li>
-                        <li>// Bcrypt</li>
-                    </ul>
-                </div>
-                <div class="descriptionContainer">
-                    <p>
-                        A <span class="greenText">MERN</span> stack project that gets data from the Mflix
-                        <span class="greenText">MongoDB</span> database. A Node server on the back end handles database requests such as getting
-                        movie details and user authorization. JSON web tokens are used for user authorization, while Bcrypt hashes and salts passwords
-                        stored in the database. Registered users can leave comments on movie pages.
-                    </p>
-                </div>
-                <div class="square gitHub">
-                    <a href="https://github.com/ianc1991/movie-db2-front-end-" target="_blank">
-                        <button>
-                            <img src="../../../assets/github.png" alt="github">
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="spaceTourismCard card">
-                <span class="cardTitle">
-                    <p>Featured Project</p>
-                    <h2>Space Tourism</h2>
-                </span>
-                <div class="textImageDivider">
-                    <a href="https://spacetourism-5a715.web.app/home" target="_blank">
-                        <div class="imgContainer">
-                            <img src="../../../assets/Space_Tourism_Mockup_3.webp" alt="Space Tourism desktop">
-                            <img src="../../../assets/Space_Tourism_Mockup_4.webp" alt="Space Tourism mobile">
-
-                        </div>
-                    </a>
-                    <div class="listContainer">
-                        <ul class="frontEndList">
-                            <li>// HTML / CSS / Angular / TypeScript / Firebase //</li>
-                        </ul>
-                    </div>
-                    <div class="textContainer">
-                        <div class="descriptionContainer">
-                            <p>
-                                A project challenge from <a class="whiteText" href="https://www.frontendmentor.io" target="_blank">frontendmentor.io</a> where the user is given a <span class="greenText">Sketch/Figma</span> file & assets, tasked with creating a web page
-                                as close to the intended design as possible. <span class="greenText">I have hosted this project here: </span> <a class="whiteText" href="https://spacetourism-5a715.web.app/home" target="_blank">https://spacetourism-5a715.web.app/home</a>
-                            </p>
-                        </div>
-                        <div class="square gitHub">
-                            <a href="https://github.com/ianc1991/space-tourism" target="_blank">
-                                <button>
-                                    <img src="../../../assets/github.png" alt="github">
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+    <p>
+      <span class="greenText">Thanks for checking out my projects!</span>
+    </p>
+    <div class="emailHeader">
+      <app-contact-me></app-contact-me>
+    </div>
+    <div
+      class="arrowContainer"
+      [ngClass]="{ hideArrow: windowScrolled }"
+      onclick="document.getElementById('scrollToCard').scrollIntoView({behavior:'smooth'});"
+    >
+      <p><i class="arrow down"></i></p>
+    </div>
+  </div>
+  <div class="projectsContainer">
+    <div class="projectCards">
+      <div id="scrollToCard" class="tabifyCard card">
+        <span class="cardTitle">
+          <p>Featured Project</p>
+          <h2>Tabify</h2>
+        </span>
+        <a href="https://github.com/ianc1991/Spotify-Tabs" target="_blank">
+          <div class="imgContainer">
+            <img
+              src="../../../assets/tabify-desktop.webp"
+              alt="Tabify desktop"
+            />
+            <img src="../../../assets/tabify-mobile.webp" alt="Tabify mobile" />
+          </div>
+        </a>
+        <div class="listContainer">
+          <ul class="frontEndList">
+            <h4>Front End</h4>
+            <li>// React / JavaScript</li>
+            <li>// React Router</li>
+            <li>// Material UI</li>
+            <li>// Axios</li>
+          </ul>
+          <ul class="frontEndList">
+            <h4>Back End</h4>
+            <li>// NodeJS</li>
+            <li>// Express</li>
+            <li>// Spotify API</li>
+            <li>// Puppeteer</li>
+            <li>// Color Thief</li>
+          </ul>
         </div>
+        <div class="descriptionContainer">
+          <p>
+            <span class="greenText">Tabify</span> is a full stack app using the
+            <span class="greenText">Spotify API</span> and
+            <span class="greenText">Puppeteer</span> to scrape data from
+            Ultimate Guitar. Users see a list of guitar tabs based on the
+            currently playing song in their Spotify.
+          </p>
+        </div>
+        <div class="square gitHub">
+          <a href="https://github.com/ianc1991/Spotify-Tabs" target="_blank">
+            <button>
+              <img src="../../../assets/github.png" alt="github" />
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="movieDbCard card">
+        <span class="cardTitle">
+          <p>Featured Project</p>
+          <h2>MovieDB</h2>
+        </span>
+        <a
+          href="https://github.com/ianc1991/movie-db2-front-end-"
+          target="_blank"
+        >
+          <div class="imgContainer">
+            <img
+              src="../../../assets/MovieDB_Desktop.webp"
+              alt="MovieDB desktop"
+            />
+            <img
+              src="../../../assets/MovieDB_Mobile.webp"
+              alt="MovieDB mobile"
+            />
+          </div>
+        </a>
+        <div class="listContainer">
+          <ul class="frontEndList">
+            <h4>Front End</h4>
+            <li>// React / JavaScript</li>
+            <li>// React Router</li>
+            <li>// Bootstrap</li>
+            <li>// Axios</li>
+            <li>// Promise Tracker</li>
+          </ul>
+          <ul class="frontEndList">
+            <h4>Back End</h4>
+            <li>// MongoDB / Mongoose</li>
+            <li>// Express</li>
+            <li>// Node</li>
+            <li>// JSON Web Token</li>
+            <li>// Bcrypt</li>
+          </ul>
+        </div>
+        <div class="descriptionContainer">
+          <p>
+            A <span class="greenText">MERN</span> stack project that gets data
+            from the Mflix <span class="greenText">MongoDB</span> database. A
+            Node server on the back end handles database requests such as
+            getting movie details and user authorization. JSON web tokens are
+            used for user authorization, while Bcrypt hashes and salts passwords
+            stored in the database. Registered users can leave comments on movie
+            pages.
+          </p>
+        </div>
+        <div class="square gitHub">
+          <a
+            href="https://github.com/ianc1991/movie-db2-front-end-"
+            target="_blank"
+          >
+            <button>
+              <img src="../../../assets/github.png" alt="github" />
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="spaceTourismCard card">
+        <span class="cardTitle">
+          <p>Featured Project</p>
+          <h2>Space Tourism</h2>
+        </span>
+        <div class="textImageDivider">
+          <a href="https://spacetourism-5a715.web.app/home" target="_blank">
+            <div class="imgContainer">
+              <img
+                src="../../../assets/Space_Tourism_Mockup_3.webp"
+                alt="Space Tourism desktop"
+              />
+              <img
+                src="../../../assets/Space_Tourism_Mockup_4.webp"
+                alt="Space Tourism mobile"
+              />
+            </div>
+          </a>
+          <div class="listContainer">
+            <ul class="frontEndList">
+              <li>// HTML / CSS / Angular / TypeScript / Firebase //</li>
+            </ul>
+          </div>
+          <div class="textContainer">
+            <div class="descriptionContainer">
+              <p>
+                A project challenge from
+                <a
+                  class="whiteText"
+                  href="https://www.frontendmentor.io"
+                  target="_blank"
+                  >frontendmentor.io</a
+                >
+                where the user is given a
+                <span class="greenText">Sketch/Figma</span> file & assets,
+                tasked with creating a web page as close to the intended design
+                as possible.
+                <span class="greenText">I have hosted this project here: </span>
+                <a
+                  class="whiteText"
+                  href="https://spacetourism-5a715.web.app/home"
+                  target="_blank"
+                  >https://spacetourism-5a715.web.app/home</a
+                >
+              </p>
+            </div>
+            <div class="square gitHub">
+              <a
+                href="https://github.com/ianc1991/space-tourism"
+                target="_blank"
+              >
+                <button>
+                  <img src="../../../assets/github.png" alt="github" />
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
-<div class="buttons">
-	<button (click)="increaseRotation()">Increase Rotation</button>
-	<button (click)="decreaseRotation()">Decrease Rotation</button>
-	<button (click)="stopRotation()">Stop Rotation</button>
+<div class="buttons" *ngIf="isMobile === false">
+  <button (click)="increaseRotation()">Increase Rotation</button>
+  <button (click)="decreaseRotation()">Decrease Rotation</button>
+  <button (click)="stopRotation()">Stop Rotation</button>
 </div>
