@@ -1,4 +1,29 @@
+# newme
 
-This is the source code to my personal website. The hosted web page can be found here: https://ianc1991.github.io/
+This template should help get you started developing with Vue 3 in Vite.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+pnpm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+pnpm dev
+```
+
+### Compile and Minify for Production
+
+```sh
+pnpm build
+```
